@@ -5,7 +5,7 @@
       <block type="console_log">
         <value name="text">
           <shadow type="text">
-            <field name="TEXT">start!</field>
+            <field name="TEXT">hello</field>
           </shadow>
         </value>
       </block>
