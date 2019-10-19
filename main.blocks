@@ -1,15 +1,63 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <variables>
-    <variable type="" id="`-S{;I:67xQidjC,HjuO">startOffset</variable>
-    <variable type="" id="fZ$)(FgE3i!2{WS]fe.w">lastArmPos</variable>
-    <variable type="" id="rL/$d]#1sN_/Z?O?(ZVZ">increment</variable>
-    <variable type="" id="l2e_$NQocg686]23?V(P">armPos</variable>
-    <variable type="" id="DF,nZDudfxZ2!pcY1p!+">loopStart</variable>
-    <variable type="" id="):1L?04d4$yk90O#ene+">currentTime</variable>
-    <variable type="" id="-1=1F(@H!V{0BmF#B$}A">motoraAdjustment</variable>
+    <variable type="" id="DkPj9*}/e#FRSsb9:R|-">loopStart</variable>
+    <variable type="" id="`KTLnq1lrENN1h%;XmAp">currentTime</variable>
+    <variable type="" id="#fxSxN#c3Q8zeAwhtEkk">motoraAdjustment</variable>
+    <variable type="" id=";GB0/Pw)|E5resh4H+ok">startOffset</variable>
+    <variable type="" id=".S8ofgZPg@UNnKV,d9UN">lastArmPos</variable>
+    <variable type="" id="]hbBB`.Pl|uX.FR?LO.W">increment</variable>
+    <variable type="" id="idm*CUgryk{MRz23nzQ*">armPos</variable>
   </variables>
-  <block type="procedures_defnoreturn" x="893" y="0">
-    <field name="NAME">armDown</field>
+  <block type="pxt-on-start" x="20" y="20">
+    <statement name="HANDLER">
+      <block type="variables_set">
+        <field name="VAR" id="]hbBB`.Pl|uX.FR?LO.W" variabletype="">increment</field>
+        <value name="VALUE">
+          <shadow type="math_number">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="variables_set">
+            <field name="VAR" id=";GB0/Pw)|E5resh4H+ok" variabletype="">startOffset</field>
+            <value name="VALUE">
+              <shadow type="math_number">
+                <field name="NUM">100</field>
+              </shadow>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="add_menu_item" x="371" y="20">
+    <value name="label">
+      <shadow type="text">
+        <field name="TEXT">crane2</field>
+      </shadow>
+    </value>
+    <statement name="HANDLER">
+      <block type="procedures_callnoreturn">
+        <mutation name="crane2"></mutation>
+        <field name="NAME">crane2</field>
+      </block>
+    </statement>
+  </block>
+  <block type="add_menu_item" x="774" y="20">
+    <value name="label">
+      <shadow type="text">
+        <field name="TEXT">crane1</field>
+      </shadow>
+    </value>
+    <statement name="HANDLER">
+      <block type="procedures_callnoreturn">
+        <mutation name="crane1"></mutation>
+        <field name="NAME">crane1</field>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" x="1177" y="20">
+    <field name="NAME">armUp</field>
     <field name="PARAMS"></field>
     <statement name="STACK">
       <block type="motorRun">
@@ -18,17 +66,17 @@
         <field name="unit">MoveUnit.MilliSeconds</field>
         <value name="speed">
           <shadow type="motorSpeedPicker">
-            <field name="speed">-20</field>
+            <field name="speed">20</field>
           </shadow>
         </value>
         <value name="value">
           <block type="variables_get">
-            <field name="VAR" id="`-S{;I:67xQidjC,HjuO" variabletype="">startOffset</field>
+            <field name="VAR" id=";GB0/Pw)|E5resh4H+ok" variabletype="">startOffset</field>
           </block>
         </value>
         <next>
           <block type="variables_set">
-            <field name="VAR" id="fZ$)(FgE3i!2{WS]fe.w" variabletype="">lastArmPos</field>
+            <field name="VAR" id=".S8ofgZPg@UNnKV,d9UN" variabletype="">lastArmPos</field>
             <value name="VALUE">
               <shadow type="math_number">
                 <field name="NUM">0</field>
@@ -46,7 +94,7 @@
                 </value>
                 <value name="text">
                   <block type="variables_get">
-                    <field name="VAR" id="fZ$)(FgE3i!2{WS]fe.w" variabletype="">lastArmPos</field>
+                    <field name="VAR" id=".S8ofgZPg@UNnKV,d9UN" variabletype="">lastArmPos</field>
                   </block>
                 </value>
                 <value name="line">
@@ -75,17 +123,17 @@
                             <field name="unit">MoveUnit.MilliSeconds</field>
                             <value name="speed">
                               <shadow type="motorSpeedPicker">
-                                <field name="speed">-20</field>
+                                <field name="speed">20</field>
                               </shadow>
                             </value>
                             <value name="value">
                               <block type="variables_get">
-                                <field name="VAR" id="rL/$d]#1sN_/Z?O?(ZVZ" variabletype="">increment</field>
+                                <field name="VAR" id="]hbBB`.Pl|uX.FR?LO.W" variabletype="">increment</field>
                               </block>
                             </value>
                             <next>
                               <block type="variables_set">
-                                <field name="VAR" id="l2e_$NQocg686]23?V(P" variabletype="">armPos</field>
+                                <field name="VAR" id="idm*CUgryk{MRz23nzQ*" variabletype="">armPos</field>
                                 <value name="VALUE">
                                   <shadow type="math_number">
                                     <field name="NUM">0</field>
@@ -103,7 +151,7 @@
                                     </value>
                                     <value name="text">
                                       <block type="variables_get">
-                                        <field name="VAR" id="fZ$)(FgE3i!2{WS]fe.w" variabletype="">lastArmPos</field>
+                                        <field name="VAR" id=".S8ofgZPg@UNnKV,d9UN" variabletype="">lastArmPos</field>
                                       </block>
                                     </value>
                                     <value name="line">
@@ -120,7 +168,7 @@
                                         </value>
                                         <value name="text">
                                           <block type="variables_get">
-                                            <field name="VAR" id="l2e_$NQocg686]23?V(P" variabletype="">armPos</field>
+                                            <field name="VAR" id="idm*CUgryk{MRz23nzQ*" variabletype="">armPos</field>
                                           </block>
                                         </value>
                                         <value name="line">
@@ -143,7 +191,7 @@
                                                     <field name="NUM">0</field>
                                                   </shadow>
                                                   <block type="variables_get">
-                                                    <field name="VAR" id="l2e_$NQocg686]23?V(P" variabletype="">armPos</field>
+                                                    <field name="VAR" id="idm*CUgryk{MRz23nzQ*" variabletype="">armPos</field>
                                                   </block>
                                                 </value>
                                                 <value name="B">
@@ -151,7 +199,7 @@
                                                     <field name="NUM">0</field>
                                                   </shadow>
                                                   <block type="variables_get">
-                                                    <field name="VAR" id="fZ$)(FgE3i!2{WS]fe.w" variabletype="">lastArmPos</field>
+                                                    <field name="VAR" id=".S8ofgZPg@UNnKV,d9UN" variabletype="">lastArmPos</field>
                                                   </block>
                                                 </value>
                                               </block>
@@ -180,7 +228,7 @@
                                                             <field name="NUM">0</field>
                                                           </shadow>
                                                           <block type="variables_get">
-                                                            <field name="VAR" id="fZ$)(FgE3i!2{WS]fe.w" variabletype="">lastArmPos</field>
+                                                            <field name="VAR" id=".S8ofgZPg@UNnKV,d9UN" variabletype="">lastArmPos</field>
                                                           </block>
                                                         </value>
                                                         <value name="B">
@@ -188,7 +236,7 @@
                                                             <field name="NUM">0</field>
                                                           </shadow>
                                                           <block type="variables_get">
-                                                            <field name="VAR" id="l2e_$NQocg686]23?V(P" variabletype="">armPos</field>
+                                                            <field name="VAR" id="idm*CUgryk{MRz23nzQ*" variabletype="">armPos</field>
                                                           </block>
                                                         </value>
                                                       </block>
@@ -208,22 +256,19 @@
                                                       </shadow>
                                                     </value>
                                                     <next>
-                                                      <block type="typescript_statement" editable="false">
-                                                        <mutation line0="break;" numlines="1"></mutation>
-                                                        <field name="LINE0">break;</field>
-                                                      </block>
+                                                      <block type="break_keyword"></block>
                                                     </next>
                                                   </block>
                                                 </statement>
                                                 <next>
                                                   <block type="variables_set">
-                                                    <field name="VAR" id="fZ$)(FgE3i!2{WS]fe.w" variabletype="">lastArmPos</field>
+                                                    <field name="VAR" id=".S8ofgZPg@UNnKV,d9UN" variabletype="">lastArmPos</field>
                                                     <value name="VALUE">
                                                       <shadow type="math_number">
                                                         <field name="NUM">0</field>
                                                       </shadow>
                                                       <block type="variables_get">
-                                                        <field name="VAR" id="l2e_$NQocg686]23?V(P" variabletype="">armPos</field>
+                                                        <field name="VAR" id="idm*CUgryk{MRz23nzQ*" variabletype="">armPos</field>
                                                       </block>
                                                     </value>
                                                   </block>
@@ -251,172 +296,141 @@
       </block>
     </statement>
   </block>
-  <block type="pxt-on-start" x="182" y="72">
-    <statement name="HANDLER">
-      <block type="variables_set">
-        <field name="VAR" id="rL/$d]#1sN_/Z?O?(ZVZ" variabletype="">increment</field>
-        <value name="VALUE">
-          <shadow type="math_number">
-            <field name="NUM">10</field>
-          </shadow>
-        </value>
+  <block type="procedures_defnoreturn" x="2018" y="20">
+    <field name="NAME">crane2</field>
+    <field name="PARAMS"></field>
+    <statement name="STACK">
+      <block type="motorResetAll">
         <next>
-          <block type="variables_set">
-            <field name="VAR" id="`-S{;I:67xQidjC,HjuO" variabletype="">startOffset</field>
-            <value name="VALUE">
-              <shadow type="math_number">
-                <field name="NUM">100</field>
-              </shadow>
-            </value>
+          <block type="typescript_statement" editable="false">
+            <mutation line0="radioactiveBrainstorm.moveUntilStall(motors.mediumA, radioactiveBrainstorm.Direction.UP, 30, 40, 100, false)" numlines="1"></mutation>
+            <field name="LINE0">radioactiveBrainstorm.moveUntilStall(motors.mediumA, radioactiveBrainstorm.Direction.UP, 30, 40, 100, false)</field>
             <next>
-              <block type="procedures_callnoreturn">
-                <mutation name="armUp"></mutation>
-                <field name="NAME">armUp</field>
+              <block type="motorPairSteer">
+                <mutation _expanded="2" _input_init="true"></mutation>
+                <field name="chassis">motors.largeBC</field>
+                <field name="unit">MoveUnit.Rotations</field>
+                <value name="turnRatio">
+                  <shadow type="motorTurnRatioPicker"></shadow>
+                  <block type="math_number">
+                    <field name="NUM">0</field>
+                  </block>
+                </value>
+                <value name="speed">
+                  <shadow type="motorSpeedPicker">
+                    <field name="speed">40</field>
+                  </shadow>
+                </value>
+                <value name="value">
+                  <shadow type="math_number">
+                    <field name="NUM">2.5</field>
+                  </shadow>
+                </value>
                 <next>
-                  <block type="motorPairSteer">
+                  <block type="motorPairTank">
                     <mutation _expanded="2" _input_init="true"></mutation>
-                    <field name="chassis">motors.largeBC</field>
+                    <field name="motors">motors.largeBC</field>
                     <field name="unit">MoveUnit.Rotations</field>
-                    <value name="turnRatio">
-                      <shadow type="motorTurnRatioPicker"></shadow>
-                      <block type="math_number">
-                        <field name="NUM">0</field>
-                      </block>
-                    </value>
-                    <value name="speed">
+                    <value name="speedLeft">
                       <shadow type="motorSpeedPicker">
-                        <field name="speed">50</field>
+                        <field name="speed">10</field>
+                      </shadow>
+                    </value>
+                    <value name="speedRight">
+                      <shadow type="motorSpeedPicker">
+                        <field name="speed">-10</field>
                       </shadow>
                     </value>
                     <value name="value">
                       <shadow type="math_number">
-                        <field name="NUM">2.25</field>
+                        <field name="NUM">0.25</field>
                       </shadow>
                     </value>
                     <next>
-                      <block type="variables_set">
-                        <field name="VAR" id="DF,nZDudfxZ2!pcY1p!+" variabletype="">loopStart</field>
-                        <value name="VALUE">
-                          <shadow type="math_number">
+                      <block type="motorPairSteer">
+                        <mutation _expanded="2" _input_init="true"></mutation>
+                        <field name="chassis">motors.largeBC</field>
+                        <field name="unit">MoveUnit.Rotations</field>
+                        <value name="turnRatio">
+                          <shadow type="motorTurnRatioPicker"></shadow>
+                          <block type="math_number">
                             <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="speed">
+                          <shadow type="motorSpeedPicker">
+                            <field name="speed">50</field>
                           </shadow>
-                          <block type="control_running_time"></block>
+                        </value>
+                        <value name="value">
+                          <shadow type="math_number">
+                            <field name="NUM">0.75</field>
+                          </shadow>
                         </value>
                         <next>
-                          <block type="device_while">
-                            <value name="COND">
-                              <shadow type="logic_boolean">
-                                <field name="BOOL">TRUE</field>
+                          <block type="motorPairTank">
+                            <mutation _expanded="2" _input_init="true"></mutation>
+                            <field name="motors">motors.largeBC</field>
+                            <field name="unit">MoveUnit.Rotations</field>
+                            <value name="speedLeft">
+                              <shadow type="motorSpeedPicker">
+                                <field name="speed">-10</field>
                               </shadow>
-                              <block type="logic_compare">
-                                <field name="OP">LT</field>
-                                <value name="A">
-                                  <shadow type="math_number">
-                                    <field name="NUM">0</field>
-                                  </shadow>
-                                  <block type="math_arithmetic">
-                                    <field name="OP">MINUS</field>
-                                    <value name="A">
-                                      <shadow type="math_number">
-                                        <field name="NUM">0</field>
-                                      </shadow>
-                                      <block type="variables_get">
-                                        <field name="VAR" id="):1L?04d4$yk90O#ene+" variabletype="">currentTime</field>
-                                      </block>
-                                    </value>
-                                    <value name="B">
-                                      <shadow type="math_number">
-                                        <field name="NUM">0</field>
-                                      </shadow>
-                                      <block type="variables_get">
-                                        <field name="VAR" id="DF,nZDudfxZ2!pcY1p!+" variabletype="">loopStart</field>
-                                      </block>
-                                    </value>
-                                  </block>
-                                </value>
-                                <value name="B">
-                                  <shadow type="math_number">
-                                    <field name="NUM">1600</field>
-                                  </shadow>
-                                </value>
-                              </block>
                             </value>
-                            <statement name="DO">
-                              <block type="variables_set">
-                                <field name="VAR" id="-1=1F(@H!V{0BmF#B$}A" variabletype="">motoraAdjustment</field>
-                                <value name="VALUE">
-                                  <shadow type="math_number">
+                            <value name="speedRight">
+                              <shadow type="motorSpeedPicker">
+                                <field name="speed">10</field>
+                              </shadow>
+                            </value>
+                            <value name="value">
+                              <shadow type="math_number">
+                                <field name="NUM">0.25</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="motorPairSteer">
+                                <mutation _expanded="2" _input_init="true"></mutation>
+                                <field name="chassis">motors.largeBC</field>
+                                <field name="unit">MoveUnit.Rotations</field>
+                                <value name="turnRatio">
+                                  <shadow type="motorTurnRatioPicker"></shadow>
+                                  <block type="math_number">
                                     <field name="NUM">0</field>
-                                  </shadow>
-                                  <block type="math_arithmetic">
-                                    <field name="OP">MINUS</field>
-                                    <value name="A">
-                                      <shadow type="math_number">
-                                        <field name="NUM">0</field>
-                                      </shadow>
-                                      <block type="colorLight">
-                                        <field name="this">sensors.color1</field>
-                                        <field name="mode">LightIntensityMode.Reflected</field>
-                                      </block>
-                                    </value>
-                                    <value name="B">
-                                      <shadow type="math_number">
-                                        <field name="NUM">40</field>
-                                      </shadow>
-                                    </value>
                                   </block>
                                 </value>
+                                <value name="speed">
+                                  <shadow type="motorSpeedPicker">
+                                    <field name="speed">40</field>
+                                  </shadow>
+                                </value>
+                                <value name="value">
+                                  <shadow type="math_number">
+                                    <field name="NUM">0.45</field>
+                                  </shadow>
+                                </value>
                                 <next>
-                                  <block type="motorPairSteer">
-                                    <mutation _expanded="0" _input_init="false"></mutation>
-                                    <field name="chassis">motors.largeBC</field>
-                                    <value name="turnRatio">
-                                      <shadow type="motorTurnRatioPicker"></shadow>
-                                      <block type="variables_get">
-                                        <field name="VAR" id="-1=1F(@H!V{0BmF#B$}A" variabletype="">motoraAdjustment</field>
-                                      </block>
-                                    </value>
-                                    <value name="speed">
-                                      <shadow type="motorSpeedPicker">
-                                        <field name="speed">25</field>
+                                  <block type="move_until_stall">
+                                    <field name="motor">motors.mediumA</field>
+                                    <field name="direction">radioactiveBrainstorm.Direction.DOWN</field>
+                                    <value name="power">
+                                      <shadow type="math_number_minmax">
+                                        <mutation min="1" max="100" label="Power"></mutation>
+                                        <field name="SLIDER">20</field>
                                       </shadow>
                                     </value>
-                                    <next>
-                                      <block type="variables_set">
-                                        <field name="VAR" id="):1L?04d4$yk90O#ene+" variabletype="">currentTime</field>
-                                        <value name="VALUE">
-                                          <shadow type="math_number">
-                                            <field name="NUM">0</field>
-                                          </shadow>
-                                          <block type="control_running_time"></block>
-                                        </value>
-                                      </block>
-                                    </next>
-                                  </block>
-                                </next>
-                              </block>
-                            </statement>
-                            <next>
-                              <block type="motorStop">
-                                <field name="motors">motors.largeBC</field>
-                                <next>
-                                  <block type="motorPairTank">
-                                    <mutation _expanded="2" _input_init="true"></mutation>
-                                    <field name="motors">motors.largeBC</field>
-                                    <field name="unit">MoveUnit.Rotations</field>
-                                    <value name="speedLeft">
-                                      <shadow type="motorSpeedPicker">
-                                        <field name="speed">21</field>
-                                      </shadow>
-                                    </value>
-                                    <value name="speedRight">
-                                      <shadow type="motorSpeedPicker">
-                                        <field name="speed">-21</field>
-                                      </shadow>
-                                    </value>
-                                    <value name="value">
+                                    <value name="increment">
                                       <shadow type="math_number">
-                                        <field name="NUM">0.1</field>
+                                        <field name="NUM">10</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="startOffset">
+                                      <shadow type="math_number">
+                                        <field name="NUM">100</field>
+                                      </shadow>
+                                    </value>
+                                    <value name="debug">
+                                      <shadow type="logic_boolean">
+                                        <field name="BOOL">TRUE</field>
                                       </shadow>
                                     </value>
                                     <next>
@@ -431,86 +445,103 @@
                                         </value>
                                         <value name="speed">
                                           <shadow type="motorSpeedPicker">
-                                            <field name="speed">35</field>
+                                            <field name="speed">-40</field>
                                           </shadow>
                                         </value>
                                         <value name="value">
                                           <shadow type="math_number">
-                                            <field name="NUM">0.35</field>
+                                            <field name="NUM">0.45</field>
                                           </shadow>
                                         </value>
                                         <next>
-                                          <block type="procedures_callnoreturn">
-                                            <mutation name="armDown"></mutation>
-                                            <field name="NAME">armDown</field>
+                                          <block type="motorStopAll">
                                             <next>
-                                              <block type="motorPairSteer">
-                                                <mutation _expanded="2" _input_init="true"></mutation>
-                                                <field name="chassis">motors.largeBC</field>
-                                                <field name="unit">MoveUnit.Rotations</field>
-                                                <value name="turnRatio">
-                                                  <shadow type="motorTurnRatioPicker">
-                                                    <field name="turnratio">0</field>
-                                                  </shadow>
-                                                </value>
-                                                <value name="speed">
-                                                  <shadow type="motorSpeedPicker">
-                                                    <field name="speed">-25</field>
-                                                  </shadow>
-                                                </value>
-                                                <value name="value">
-                                                  <shadow type="math_number">
-                                                    <field name="NUM">0.4</field>
-                                                  </shadow>
-                                                </value>
+                                              <block type="motorResetAll">
                                                 <next>
-                                                  <block type="procedures_callnoreturn">
-                                                    <mutation name="armUp"></mutation>
-                                                    <field name="NAME">armUp</field>
+                                                  <block type="motorPairTank">
+                                                    <mutation _expanded="2" _input_init="true"></mutation>
+                                                    <field name="motors">motors.largeBC</field>
+                                                    <field name="unit">MoveUnit.Rotations</field>
+                                                    <value name="speedLeft">
+                                                      <shadow type="motorSpeedPicker">
+                                                        <field name="speed">-10</field>
+                                                      </shadow>
+                                                    </value>
+                                                    <value name="speedRight">
+                                                      <shadow type="motorSpeedPicker">
+                                                        <field name="speed">10</field>
+                                                      </shadow>
+                                                    </value>
+                                                    <value name="value">
+                                                      <shadow type="math_number">
+                                                        <field name="NUM">0.25</field>
+                                                      </shadow>
+                                                    </value>
                                                     <next>
-                                                      <block type="motorPairSteer">
-                                                        <mutation _expanded="2" _input_init="true"></mutation>
-                                                        <field name="chassis">motors.largeBC</field>
-                                                        <field name="unit">MoveUnit.Rotations</field>
-                                                        <value name="turnRatio">
-                                                          <shadow type="motorTurnRatioPicker">
-                                                            <field name="turnratio">0</field>
+                                                      <block type="move_until_stall">
+                                                        <field name="motor">motors.mediumA</field>
+                                                        <field name="direction">radioactiveBrainstorm.Direction.DOWN</field>
+                                                        <value name="power">
+                                                          <shadow type="math_number_minmax">
+                                                            <mutation min="1" max="100" label="Power"></mutation>
+                                                            <field name="SLIDER">20</field>
                                                           </shadow>
                                                         </value>
-                                                        <value name="speed">
-                                                          <shadow type="motorSpeedPicker">
-                                                            <field name="speed">-25</field>
-                                                          </shadow>
-                                                        </value>
-                                                        <value name="value">
+                                                        <value name="increment">
                                                           <shadow type="math_number">
-                                                            <field name="NUM">0.1</field>
+                                                            <field name="NUM">10</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <value name="startOffset">
+                                                          <shadow type="math_number">
+                                                            <field name="NUM">100</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <value name="debug">
+                                                          <shadow type="logic_boolean">
+                                                            <field name="BOOL">TRUE</field>
                                                           </shadow>
                                                         </value>
                                                         <next>
-                                                          <block type="motorPairTank">
+                                                          <block type="motorPairSteer">
                                                             <mutation _expanded="2" _input_init="true"></mutation>
-                                                            <field name="motors">motors.largeBC</field>
+                                                            <field name="chassis">motors.largeBC</field>
                                                             <field name="unit">MoveUnit.Rotations</field>
-                                                            <value name="speedLeft">
-                                                              <shadow type="motorSpeedPicker">
-                                                                <field name="speed">-5</field>
+                                                            <value name="turnRatio">
+                                                              <shadow type="motorTurnRatioPicker">
+                                                                <field name="turnratio">0</field>
                                                               </shadow>
                                                             </value>
-                                                            <value name="speedRight">
+                                                            <value name="speed">
                                                               <shadow type="motorSpeedPicker">
-                                                                <field name="speed">5</field>
+                                                                <field name="speed">40</field>
                                                               </shadow>
                                                             </value>
                                                             <value name="value">
                                                               <shadow type="math_number">
-                                                                <field name="NUM">0.05</field>
+                                                                <field name="NUM">0.45</field>
                                                               </shadow>
                                                             </value>
                                                             <next>
-                                                              <block type="procedures_callnoreturn">
-                                                                <mutation name="armDown"></mutation>
-                                                                <field name="NAME">armDown</field>
+                                                              <block type="motorPairTank">
+                                                                <mutation _expanded="2" _input_init="true"></mutation>
+                                                                <field name="motors">motors.largeBC</field>
+                                                                <field name="unit">MoveUnit.Rotations</field>
+                                                                <value name="speedLeft">
+                                                                  <shadow type="motorSpeedPicker">
+                                                                    <field name="speed">10</field>
+                                                                  </shadow>
+                                                                </value>
+                                                                <value name="speedRight">
+                                                                  <shadow type="motorSpeedPicker">
+                                                                    <field name="speed">-10</field>
+                                                                  </shadow>
+                                                                </value>
+                                                                <value name="value">
+                                                                  <shadow type="math_number">
+                                                                    <field name="NUM">0.25</field>
+                                                                  </shadow>
+                                                                </value>
                                                                 <next>
                                                                   <block type="motorPairSteer">
                                                                     <mutation _expanded="2" _input_init="true"></mutation>
@@ -523,18 +554,43 @@
                                                                     </value>
                                                                     <value name="speed">
                                                                       <shadow type="motorSpeedPicker">
-                                                                        <field name="speed">25</field>
+                                                                        <field name="speed">40</field>
                                                                       </shadow>
                                                                     </value>
                                                                     <value name="value">
                                                                       <shadow type="math_number">
-                                                                        <field name="NUM">0.2</field>
+                                                                        <field name="NUM">0.05</field>
                                                                       </shadow>
                                                                     </value>
                                                                     <next>
-                                                                      <block type="procedures_callnoreturn">
-                                                                        <mutation name="armUp"></mutation>
-                                                                        <field name="NAME">armUp</field>
+                                                                      <block type="motorStopAll">
+                                                                        <next>
+                                                                          <block type="move_until_stall">
+                                                                            <field name="motor">motors.mediumA</field>
+                                                                            <field name="direction">radioactiveBrainstorm.Direction.UP</field>
+                                                                            <value name="power">
+                                                                              <shadow type="math_number_minmax">
+                                                                                <mutation min="1" max="100" label="Power"></mutation>
+                                                                                <field name="SLIDER">20</field>
+                                                                              </shadow>
+                                                                            </value>
+                                                                            <value name="increment">
+                                                                              <shadow type="math_number">
+                                                                                <field name="NUM">10</field>
+                                                                              </shadow>
+                                                                            </value>
+                                                                            <value name="startOffset">
+                                                                              <shadow type="math_number">
+                                                                                <field name="NUM">100</field>
+                                                                              </shadow>
+                                                                            </value>
+                                                                            <value name="debug">
+                                                                              <shadow type="logic_boolean">
+                                                                                <field name="BOOL">TRUE</field>
+                                                                              </shadow>
+                                                                            </value>
+                                                                          </block>
+                                                                        </next>
                                                                       </block>
                                                                     </next>
                                                                   </block>
@@ -570,8 +626,313 @@
       </block>
     </statement>
   </block>
-  <block type="procedures_defnoreturn" x="1744" y="0">
-    <field name="NAME">armUp</field>
+  <block type="procedures_defnoreturn" x="20" y="905">
+    <field name="NAME">crane1</field>
+    <field name="PARAMS"></field>
+    <statement name="STACK">
+      <block type="procedures_callnoreturn">
+        <mutation name="armUp"></mutation>
+        <field name="NAME">armUp</field>
+        <next>
+          <block type="motorPairSteer">
+            <mutation _expanded="2" _input_init="true"></mutation>
+            <field name="chassis">motors.largeBC</field>
+            <field name="unit">MoveUnit.Rotations</field>
+            <value name="turnRatio">
+              <shadow type="motorTurnRatioPicker"></shadow>
+              <block type="math_number">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <value name="speed">
+              <shadow type="motorSpeedPicker">
+                <field name="speed">50</field>
+              </shadow>
+            </value>
+            <value name="value">
+              <shadow type="math_number">
+                <field name="NUM">2.25</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="variables_set">
+                <field name="VAR" id="DkPj9*}/e#FRSsb9:R|-" variabletype="">loopStart</field>
+                <value name="VALUE">
+                  <shadow type="math_number">
+                    <field name="NUM">0</field>
+                  </shadow>
+                  <block type="control_running_time"></block>
+                </value>
+                <next>
+                  <block type="device_while">
+                    <value name="COND">
+                      <shadow type="logic_boolean">
+                        <field name="BOOL">TRUE</field>
+                      </shadow>
+                      <block type="logic_compare">
+                        <field name="OP">LT</field>
+                        <value name="A">
+                          <shadow type="math_number">
+                            <field name="NUM">0</field>
+                          </shadow>
+                          <block type="math_arithmetic">
+                            <field name="OP">MINUS</field>
+                            <value name="A">
+                              <shadow type="math_number">
+                                <field name="NUM">0</field>
+                              </shadow>
+                              <block type="variables_get">
+                                <field name="VAR" id="`KTLnq1lrENN1h%;XmAp" variabletype="">currentTime</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <shadow type="math_number">
+                                <field name="NUM">0</field>
+                              </shadow>
+                              <block type="variables_get">
+                                <field name="VAR" id="DkPj9*}/e#FRSsb9:R|-" variabletype="">loopStart</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <shadow type="math_number">
+                            <field name="NUM">1600</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                    <statement name="DO">
+                      <block type="variables_set">
+                        <field name="VAR" id="#fxSxN#c3Q8zeAwhtEkk" variabletype="">motoraAdjustment</field>
+                        <value name="VALUE">
+                          <shadow type="math_number">
+                            <field name="NUM">0</field>
+                          </shadow>
+                          <block type="math_arithmetic">
+                            <field name="OP">MINUS</field>
+                            <value name="A">
+                              <shadow type="math_number">
+                                <field name="NUM">0</field>
+                              </shadow>
+                              <block type="colorLight">
+                                <field name="this">sensors.color1</field>
+                                <field name="mode">LightIntensityMode.Reflected</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <shadow type="math_number">
+                                <field name="NUM">40</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="motorPairSteer">
+                            <mutation _expanded="0" _input_init="false"></mutation>
+                            <field name="chassis">motors.largeBC</field>
+                            <value name="turnRatio">
+                              <shadow type="motorTurnRatioPicker"></shadow>
+                              <block type="variables_get">
+                                <field name="VAR" id="#fxSxN#c3Q8zeAwhtEkk" variabletype="">motoraAdjustment</field>
+                              </block>
+                            </value>
+                            <value name="speed">
+                              <shadow type="motorSpeedPicker">
+                                <field name="speed">25</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="variables_set">
+                                <field name="VAR" id="`KTLnq1lrENN1h%;XmAp" variabletype="">currentTime</field>
+                                <value name="VALUE">
+                                  <shadow type="math_number">
+                                    <field name="NUM">0</field>
+                                  </shadow>
+                                  <block type="control_running_time"></block>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </statement>
+                    <next>
+                      <block type="motorStop">
+                        <field name="motors">motors.largeBC</field>
+                        <next>
+                          <block type="motorPairTank">
+                            <mutation _expanded="2" _input_init="true"></mutation>
+                            <field name="motors">motors.largeBC</field>
+                            <field name="unit">MoveUnit.Rotations</field>
+                            <value name="speedLeft">
+                              <shadow type="motorSpeedPicker">
+                                <field name="speed">21</field>
+                              </shadow>
+                            </value>
+                            <value name="speedRight">
+                              <shadow type="motorSpeedPicker">
+                                <field name="speed">-21</field>
+                              </shadow>
+                            </value>
+                            <value name="value">
+                              <shadow type="math_number">
+                                <field name="NUM">0.1</field>
+                              </shadow>
+                            </value>
+                            <next>
+                              <block type="motorPairSteer">
+                                <mutation _expanded="2" _input_init="true"></mutation>
+                                <field name="chassis">motors.largeBC</field>
+                                <field name="unit">MoveUnit.Rotations</field>
+                                <value name="turnRatio">
+                                  <shadow type="motorTurnRatioPicker"></shadow>
+                                  <block type="math_number">
+                                    <field name="NUM">0</field>
+                                  </block>
+                                </value>
+                                <value name="speed">
+                                  <shadow type="motorSpeedPicker">
+                                    <field name="speed">35</field>
+                                  </shadow>
+                                </value>
+                                <value name="value">
+                                  <shadow type="math_number">
+                                    <field name="NUM">0.35</field>
+                                  </shadow>
+                                </value>
+                                <next>
+                                  <block type="procedures_callnoreturn">
+                                    <mutation name="armDown"></mutation>
+                                    <field name="NAME">armDown</field>
+                                    <next>
+                                      <block type="motorPairSteer">
+                                        <mutation _expanded="2" _input_init="true"></mutation>
+                                        <field name="chassis">motors.largeBC</field>
+                                        <field name="unit">MoveUnit.Rotations</field>
+                                        <value name="turnRatio">
+                                          <shadow type="motorTurnRatioPicker"></shadow>
+                                          <block type="math_number">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                        <value name="speed">
+                                          <shadow type="motorSpeedPicker">
+                                            <field name="speed">-25</field>
+                                          </shadow>
+                                        </value>
+                                        <value name="value">
+                                          <shadow type="math_number">
+                                            <field name="NUM">0.4</field>
+                                          </shadow>
+                                        </value>
+                                        <next>
+                                          <block type="procedures_callnoreturn">
+                                            <mutation name="armUp"></mutation>
+                                            <field name="NAME">armUp</field>
+                                            <next>
+                                              <block type="motorPairSteer">
+                                                <mutation _expanded="2" _input_init="true"></mutation>
+                                                <field name="chassis">motors.largeBC</field>
+                                                <field name="unit">MoveUnit.Rotations</field>
+                                                <value name="turnRatio">
+                                                  <shadow type="motorTurnRatioPicker"></shadow>
+                                                  <block type="math_number">
+                                                    <field name="NUM">0</field>
+                                                  </block>
+                                                </value>
+                                                <value name="speed">
+                                                  <shadow type="motorSpeedPicker">
+                                                    <field name="speed">-25</field>
+                                                  </shadow>
+                                                </value>
+                                                <value name="value">
+                                                  <shadow type="math_number">
+                                                    <field name="NUM">0.1</field>
+                                                  </shadow>
+                                                </value>
+                                                <next>
+                                                  <block type="motorPairTank">
+                                                    <mutation _expanded="2" _input_init="true"></mutation>
+                                                    <field name="motors">motors.largeBC</field>
+                                                    <field name="unit">MoveUnit.Rotations</field>
+                                                    <value name="speedLeft">
+                                                      <shadow type="motorSpeedPicker">
+                                                        <field name="speed">-5</field>
+                                                      </shadow>
+                                                    </value>
+                                                    <value name="speedRight">
+                                                      <shadow type="motorSpeedPicker">
+                                                        <field name="speed">5</field>
+                                                      </shadow>
+                                                    </value>
+                                                    <value name="value">
+                                                      <shadow type="math_number">
+                                                        <field name="NUM">0.05</field>
+                                                      </shadow>
+                                                    </value>
+                                                    <next>
+                                                      <block type="procedures_callnoreturn">
+                                                        <mutation name="armDown"></mutation>
+                                                        <field name="NAME">armDown</field>
+                                                        <next>
+                                                          <block type="motorPairSteer">
+                                                            <mutation _expanded="2" _input_init="true"></mutation>
+                                                            <field name="chassis">motors.largeBC</field>
+                                                            <field name="unit">MoveUnit.Rotations</field>
+                                                            <value name="turnRatio">
+                                                              <shadow type="motorTurnRatioPicker"></shadow>
+                                                              <block type="math_number">
+                                                                <field name="NUM">0</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="speed">
+                                                              <shadow type="motorSpeedPicker">
+                                                                <field name="speed">25</field>
+                                                              </shadow>
+                                                            </value>
+                                                            <value name="value">
+                                                              <shadow type="math_number">
+                                                                <field name="NUM">0.2</field>
+                                                              </shadow>
+                                                            </value>
+                                                            <next>
+                                                              <block type="procedures_callnoreturn">
+                                                                <mutation name="armUp"></mutation>
+                                                                <field name="NAME">armUp</field>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" x="913" y="905">
+    <field name="NAME">armDown</field>
     <field name="PARAMS"></field>
     <statement name="STACK">
       <block type="motorRun">
@@ -580,17 +941,17 @@
         <field name="unit">MoveUnit.MilliSeconds</field>
         <value name="speed">
           <shadow type="motorSpeedPicker">
-            <field name="speed">20</field>
+            <field name="speed">-20</field>
           </shadow>
         </value>
         <value name="value">
           <block type="variables_get">
-            <field name="VAR" id="`-S{;I:67xQidjC,HjuO" variabletype="">startOffset</field>
+            <field name="VAR" id=";GB0/Pw)|E5resh4H+ok" variabletype="">startOffset</field>
           </block>
         </value>
         <next>
           <block type="variables_set">
-            <field name="VAR" id="fZ$)(FgE3i!2{WS]fe.w" variabletype="">lastArmPos</field>
+            <field name="VAR" id=".S8ofgZPg@UNnKV,d9UN" variabletype="">lastArmPos</field>
             <value name="VALUE">
               <shadow type="math_number">
                 <field name="NUM">0</field>
@@ -608,7 +969,7 @@
                 </value>
                 <value name="text">
                   <block type="variables_get">
-                    <field name="VAR" id="fZ$)(FgE3i!2{WS]fe.w" variabletype="">lastArmPos</field>
+                    <field name="VAR" id=".S8ofgZPg@UNnKV,d9UN" variabletype="">lastArmPos</field>
                   </block>
                 </value>
                 <value name="line">
@@ -637,17 +998,17 @@
                             <field name="unit">MoveUnit.MilliSeconds</field>
                             <value name="speed">
                               <shadow type="motorSpeedPicker">
-                                <field name="speed">20</field>
+                                <field name="speed">-20</field>
                               </shadow>
                             </value>
                             <value name="value">
                               <block type="variables_get">
-                                <field name="VAR" id="rL/$d]#1sN_/Z?O?(ZVZ" variabletype="">increment</field>
+                                <field name="VAR" id="]hbBB`.Pl|uX.FR?LO.W" variabletype="">increment</field>
                               </block>
                             </value>
                             <next>
                               <block type="variables_set">
-                                <field name="VAR" id="l2e_$NQocg686]23?V(P" variabletype="">armPos</field>
+                                <field name="VAR" id="idm*CUgryk{MRz23nzQ*" variabletype="">armPos</field>
                                 <value name="VALUE">
                                   <shadow type="math_number">
                                     <field name="NUM">0</field>
@@ -665,7 +1026,7 @@
                                     </value>
                                     <value name="text">
                                       <block type="variables_get">
-                                        <field name="VAR" id="fZ$)(FgE3i!2{WS]fe.w" variabletype="">lastArmPos</field>
+                                        <field name="VAR" id=".S8ofgZPg@UNnKV,d9UN" variabletype="">lastArmPos</field>
                                       </block>
                                     </value>
                                     <value name="line">
@@ -682,7 +1043,7 @@
                                         </value>
                                         <value name="text">
                                           <block type="variables_get">
-                                            <field name="VAR" id="l2e_$NQocg686]23?V(P" variabletype="">armPos</field>
+                                            <field name="VAR" id="idm*CUgryk{MRz23nzQ*" variabletype="">armPos</field>
                                           </block>
                                         </value>
                                         <value name="line">
@@ -705,7 +1066,7 @@
                                                     <field name="NUM">0</field>
                                                   </shadow>
                                                   <block type="variables_get">
-                                                    <field name="VAR" id="l2e_$NQocg686]23?V(P" variabletype="">armPos</field>
+                                                    <field name="VAR" id="idm*CUgryk{MRz23nzQ*" variabletype="">armPos</field>
                                                   </block>
                                                 </value>
                                                 <value name="B">
@@ -713,7 +1074,7 @@
                                                     <field name="NUM">0</field>
                                                   </shadow>
                                                   <block type="variables_get">
-                                                    <field name="VAR" id="fZ$)(FgE3i!2{WS]fe.w" variabletype="">lastArmPos</field>
+                                                    <field name="VAR" id=".S8ofgZPg@UNnKV,d9UN" variabletype="">lastArmPos</field>
                                                   </block>
                                                 </value>
                                               </block>
@@ -742,7 +1103,7 @@
                                                             <field name="NUM">0</field>
                                                           </shadow>
                                                           <block type="variables_get">
-                                                            <field name="VAR" id="fZ$)(FgE3i!2{WS]fe.w" variabletype="">lastArmPos</field>
+                                                            <field name="VAR" id=".S8ofgZPg@UNnKV,d9UN" variabletype="">lastArmPos</field>
                                                           </block>
                                                         </value>
                                                         <value name="B">
@@ -750,7 +1111,7 @@
                                                             <field name="NUM">0</field>
                                                           </shadow>
                                                           <block type="variables_get">
-                                                            <field name="VAR" id="l2e_$NQocg686]23?V(P" variabletype="">armPos</field>
+                                                            <field name="VAR" id="idm*CUgryk{MRz23nzQ*" variabletype="">armPos</field>
                                                           </block>
                                                         </value>
                                                       </block>
@@ -770,22 +1131,19 @@
                                                       </shadow>
                                                     </value>
                                                     <next>
-                                                      <block type="typescript_statement" editable="false">
-                                                        <mutation line0="break;" numlines="1"></mutation>
-                                                        <field name="LINE0">break;</field>
-                                                      </block>
+                                                      <block type="break_keyword"></block>
                                                     </next>
                                                   </block>
                                                 </statement>
                                                 <next>
                                                   <block type="variables_set">
-                                                    <field name="VAR" id="fZ$)(FgE3i!2{WS]fe.w" variabletype="">lastArmPos</field>
+                                                    <field name="VAR" id=".S8ofgZPg@UNnKV,d9UN" variabletype="">lastArmPos</field>
                                                     <value name="VALUE">
                                                       <shadow type="math_number">
                                                         <field name="NUM">0</field>
                                                       </shadow>
                                                       <block type="variables_get">
-                                                        <field name="VAR" id="l2e_$NQocg686]23?V(P" variabletype="">armPos</field>
+                                                        <field name="VAR" id="idm*CUgryk{MRz23nzQ*" variabletype="">armPos</field>
                                                       </block>
                                                     </value>
                                                   </block>
@@ -813,5 +1171,5 @@
       </block>
     </statement>
   </block>
-  <block type="forever" x="0" y="1045"></block>
+  <block type="forever" x="1764" y="905"></block>
 </xml>
